@@ -1,0 +1,14 @@
+<%-|
+   Hash          $policy_hash,
+   Array[String] $keys,
+   Integer       $key_size,
+|-%>
+{
+<% $keys.each | Integer $index, String $key | { -%>
+<% if $index >= $key_size -1 { -%>
+  "<%= $key %>": <%= $policy_hash[$key] %>
+<% }else{ -%>
+  "<%= $key %>": <%= $policy_hash[$key] %>,
+<% } -%>
+<% } -%>
+}
