@@ -15,7 +15,7 @@ Puppet module to install the Google Chrome web browser module. Currently support
 * Debian / Ubuntu / Mint
 * openSUSE
 
-## Tested on:
+## Tested on
 
 * Fedora 20, 21, 22, 23, 24, 25
 * CentOS 7
@@ -49,6 +49,7 @@ class { 'google_chrome':
   version => 'beta',
 }
 ```
+
 To modify the full set of default parameters.
 
 ```puppet
@@ -71,13 +72,13 @@ Fork this repository and create a feature branch to work on your changes. Before
 
 * Please run [tests](https://github.com/jamesnetherton/puppet-google-chrome/blob/master/spec/classes/chrome_browser_spec.rb) and if necessary add test coverage for your changes:
 
-```
+```bash
 rake spec
 ```
 
 * Run lint checks:
 
-```
+```bash
 puppet-lint manifests --fail-on-warnings \
                       --no-documentation-check \
                       --no-autoloader_layout-check \

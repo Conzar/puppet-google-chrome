@@ -12,7 +12,14 @@ class google_chrome::policy(
   $root_dir        = '/etc/opt/chrome/policies'
   $policy_dir      = "${root_dir}/managed"
   $recommended_dir = "${root_dir}/recommended"
-  $required_dirs   = ['/etc/opt','/etc/opt/chrome',$root_dir, $policy_dir, $recommended_dir]
+  $required_dirs   = ['/etc/opt/chrome',$root_dir, $policy_dir, $recommended_dir]
+
+  unless '/etc/opt' {
+    file{'/etc/opt':
+      ensure => directory,
+      mode   => '0755'
+    }
+  }
 
   file{$required_dirs:
     ensure => directory,
